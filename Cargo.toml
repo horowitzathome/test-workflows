@@ -1,0 +1,23 @@
+[package]
+name = "hello-container"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+axum = "0.6.2"
+axum-extra = { version = "0.6.0", features = ["typed-routing"] }
+tokio = { version = "1.18.2", features = ["macros", "rt-multi-thread", "signal"] }
+axum-prometheus = "0.3.1"
+anyhow = "1.0.69"
+tower-http = { version = "0.4.0", default-features = false, features = ["trace", "cors"] }
+serde = { version = "1.0.152", features = ["derive"] }
+serde_json = "1.0.94"
+tracing = "0.1.37"
+tracing-subscriber = {version = "0.3.16", features = ["json"] }
+dotenvy = "0.15"
+
+[dev-dependencies]
+assert2 = "0.3.10"
+serde_with = { version = "2.3.1", features = ["time_0_3"] }
